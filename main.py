@@ -32,10 +32,7 @@ def main():
             
             if st.button("Generate Suggested Password"):
                 suggested_password = password_manager.generate_encryption_password()
-                st.session_state.suggested_password = suggested_password
                 st.text_input("Suggested Password", value=suggested_password, key="suggested_password_input")
-                if st.button("Use Suggested Password"):
-                    encryption_password = suggested_password
             
             if st.button("Generate Passwords"):
                 passwords_data, passwords_dict = password_manager.generate_passwords(st.session_state.accounts)
